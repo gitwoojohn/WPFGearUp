@@ -1,12 +1,44 @@
 ﻿<Window x:Class="DemoApp.MainWindow"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
-        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:local="clr-namespace:DemoApp"
-        mc:Ignorable="d"
-        Title="MainWindow" Height="350" Width="525">
-    <Grid>
+        xmlns:vm="clr-namespace:DemoApp.ViewModel"
+        xmlns:local="clr-namespace:DemoApp"        
+        FontSize="13"
+        FontFamily="Verdana"
+        WindowStartupLocation="CenterScreen"
+        Title="{Binding Path=DisplayName}" Height="420" Width="650">
+
+    <Window.Resources>
+        <ResourceDictionary Source="MainWindowResources.xaml" />
+    </Window.Resources>
+    <DockPanel>
+        <DockPanel DockPanel.Dock="Top" KeyboardNavigation.TabNavigation="None" >
+            <Menu KeyboardNavigation.TabNavigation="Cycle">
+                <MenuItem Header="_File">
+                    <MenuItem Header="_Open"/>
+                    <Separator />
+                    <MenuItem Header="P_reference"/>
+                    <MenuItem Height="3" Background="DarkGray"/>
+                    <MenuItem Header="E_xit" Command="{Binding Path=CloseCommand}">
+                        <MenuItem.Icon>
+                            <Image Source="images/exit_logout.png"/>
+                        </MenuItem.Icon> 
+                    </MenuItem>
+                </MenuItem>
+                <MenuItem Header="_Edit"/>
+                <MenuItem Header="_Option"/>
+                <MenuItem Header="_Help"/>
+            </Menu>
+        </DockPanel>
+        <Grid Margin="4">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto"/>
+                <ColumnDefinition Width="4" />
+                <ColumnDefinition Width="*" />
+            </Grid.ColumnDefinitions>
+        </Grid>
         
-    </Grid>
+        
+    </DockPanel>
+
 </Window>
