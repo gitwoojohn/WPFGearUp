@@ -14,7 +14,6 @@ namespace DemoApp
 
         readonly Action<object> _execute;
         readonly Predicate<object> _canExecute;
-        private object p;
 
         #endregion // Fields
 
