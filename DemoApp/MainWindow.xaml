@@ -36,9 +36,26 @@
                 <ColumnDefinition Width="4" />
                 <ColumnDefinition Width="*" />
             </Grid.ColumnDefinitions>
+            <Border Grid.Column="0" Style="{StaticResource MainBorderStyle}" Width="170">
+                <HeaderedContentControl 
+                    Content="{Binding Path=Commands}" 
+                    ContentTemplate="{StaticResource CommandsTemplate}" 
+                    Header="Control Panel" 
+                    Style="{StaticResource MainHCCStyle}"
+                    />
+            </Border>
+
+            <Border
+            Grid.Column="2" 
+            Style="{StaticResource MainBorderStyle}">
+                <HeaderedContentControl 
+                    Content="{Binding Path=Workspaces}"
+                    ContentTemplate="{StaticResource WorkspacesTemplate}"
+                    Header="Workspaces"
+                    Style="{StaticResource MainHCCStyle}"
+                    />
+            </Border>
         </Grid>
-        
-        
     </DockPanel>
 
 </Window>

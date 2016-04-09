@@ -1,12 +1,18 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using DemoApp.Model;
 
 namespace DemoApp.DataAccess
 {
-    class CustomerAddedEventArgs
+    /// <summary>
+    /// CustomerRepository's의 CustomerAdded 이벤트 인수입니다.
+    /// </summary>
+    public class CustomerAddedEventArgs : EventArgs
     {
+        public CustomerAddedEventArgs( Customer newCustomer )
+        {
+            this.NewCustomer = newCustomer;
+        }
+
+        public Customer NewCustomer { get; private set; }
     }
 }

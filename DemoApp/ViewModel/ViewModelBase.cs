@@ -7,7 +7,7 @@ namespace DemoApp.ViewModel
     /// <summary>
     /// 속성값 변경시 알림과 리소스 해제를 위한 가비지 컬렉션 구현. 
     /// <para>
-    /// <see cref="CommandViewModel"/> 클래스에서 이 ViewModelBase를 상속함.
+    /// <see cref="WorkspaceViewModel"/> 클래스에서 이 ViewModelBase를 상속함.
     /// </para>
     /// </summary>
     public class ViewModelBase : INotifyPropertyChanged, IDisposable
@@ -67,7 +67,7 @@ namespace DemoApp.ViewModel
             VerifyPropertyName( propertyName );
 
             // C# 6 New Feature PropertyChanged이 null이 아니면 이벤트 호출.
-            PropertyChanged?.Invoke( this, new PropertyChangedEventArgs( nameof( propertyName ) ) );
+            PropertyChanged?.Invoke( this, new PropertyChangedEventArgs(  propertyName ) );
         }
 
         #endregion INotifyPropertyChanged Members
